@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  overflow-x: hidden;
+    padding-top: 60px;
+  @apply bg-light text-dark font-sans;
+}
+
+/* CONTAINER */
+.container-custom {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+/* SECTIONS */
+.section {
+  @apply py-16;
+}
+
+/* SCROLLBAR (premium feel) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+/* BUTTON BASE */
+.btn {
+  @apply px-5 py-2 rounded-lg font-medium transition;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-secondary;
+}
+
+.btn-outline {
+  @apply border border-primary text-primary hover:bg-blue-50;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-10 sm:py-14 md:py-16;
+}
+
+/* Prevent overflow issues */
