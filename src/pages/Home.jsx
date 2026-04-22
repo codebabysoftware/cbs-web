@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import HeroSection from "../components/home/HeroSection";
+import ServicesSection from "../components/home/ServicesSection";
 import TrustSection from "../components/home/TrustSection";
 import CoursesPreview from "../components/home/CoursesPreview";
 import ProjectsPreview from "../components/home/ProjectsPreview";
@@ -18,6 +19,7 @@ const Home = () => {
       </Helmet>
 
       <HeroSection />
+      <ServicesSection />
       <TrustSection />
       <CoursesPreview />
       <ProjectsPreview />

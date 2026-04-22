@@ -1,138 +1,301 @@
+// src/components/common/Navbar.jsx
+
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Scroll effect (optimized)
+  const [projectsDropdown, setProjectsDropdown] = useState(false);
+  const [placementsDropdown, setPlacementsDropdown] = useState(false);
+
+  const [mobileProjects, setMobileProjects] = useState(false);
+  const [mobilePlacements, setMobilePlacements] = useState(false);
+
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50 && !scrolled) setScrolled(true);
-      else if (window.scrollY <= 50 && scrolled) setScrolled(false);
+      setScrolled(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrolled]);
 
-  // Prevent background scroll when menu open
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Lock body scroll on mobile menu
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
+  // Active link style
+  const navLinkClass = ({ isActive }) =>
+    isActive
+      ? "text-blue-600 font-semibold relative after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-blue-600"
+      : "text-gray-700 hover:text-blue-600 transition";
+
   return (
     <>
-      {/* 🔥 NAVBAR */}
+      {/* HEADER */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-lg shadow-md py-2"
-            : "bg-transparent py-4"
+            ? "bg-white/90 backdrop-blur-md shadow-md py-3"
+            : "bg-white py-5"
         }`}
       >
-        <div className="container-custom flex justify-between items-center">
+        <div className="container-custom flex items-center justify-between">
 
           {/* LOGO */}
-          <Link to="/" className="text-xl font-bold text-primary">
-            MyCompany
+          <Link
+            to="/"
+            className="text-xl md:text-2xl font-bold text-blue-600 tracking-tight"
+          >
+            Codebaby Software
           </Link>
 
           {/* DESKTOP MENU */}
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium">
 
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/courses">Courses</NavLink>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/internships">Internships</NavLink>
-            <NavLink to="/mock-interviews">Mock Interviews</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/" end className={navLinkClass}>
+              HOME
+            </NavLink>
+
+            <NavLink to="/courses" className={navLinkClass}>
+              COURSES
+            </NavLink>
+
+            {/* PROJECTS */}
+            <div
+              className="relative"
+              onMouseEnter={() => setProjectsDropdown(true)}
+              onMouseLeave={() => setProjectsDropdown(false)}
+            >
+              <NavLink
+                to="/projects"
+                className={navLinkClass}
+              >
+                PROJECTS
+              </NavLink>
+
+              <div
+                className={`absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-200 ${
+                  projectsDropdown
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2"
+                }`}
+              >
+                <Link
+                  to="/projects?type=academic"
+                  className="block px-5 py-3 hover:bg-blue-50 rounded-t-xl text-sm"
+                >
+                  Academic Projects
+                </Link>
+
+                <Link
+                  to="/projects?type=mini"
+                  className="block px-5 py-3 hover:bg-blue-50 text-sm"
+                >
+                  Mini Projects
+                </Link>
+
+                <Link
+                  to="/projects?type=industrial"
+                  className="block px-5 py-3 hover:bg-blue-50 rounded-b-xl text-sm"
+                >
+                  Industrial Projects
+                </Link>
+              </div>
+            </div>
+
+            {/* PLACEMENTS */}
+            <div
+              className="relative"
+              onMouseEnter={() => setPlacementsDropdown(true)}
+              onMouseLeave={() => setPlacementsDropdown(false)}
+            >
+              <NavLink
+                to="/placements"
+                className={navLinkClass}
+              >
+                PLACEMENTS
+              </NavLink>
+
+              <div
+                className={`absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-200 ${
+                  placementsDropdown
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2"
+                }`}
+              >
+                <Link
+                  to="/placements"
+                  className="block px-5 py-3 hover:bg-blue-50 rounded-t-xl text-sm"
+                >
+                  Placement Services
+                </Link>
+
+                <Link
+                  to="/mock-interviews"
+                  className="block px-5 py-3 hover:bg-blue-50 rounded-b-xl text-sm"
+                >
+                  Mock Interviews
+                </Link>
+              </div>
+            </div>
+
+            <NavLink to="/internships" className={navLinkClass}>
+              INTERNSHIPS
+            </NavLink>
+
+            <NavLink to="/about" className={navLinkClass}>
+              ABOUT
+            </NavLink>
 
           </nav>
 
           {/* CTA */}
-          <Link
-            to="/contact"
-            className="hidden md:inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm"
-          >
-            Get Started
-          </Link>
+          <div className="hidden lg:block">
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-5 py-2.5 rounded-xl bg-blue-700 text-white text-sm font-semibold"
+                  : "px-5 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition"
+              }
+            >
+              CONTACT US
+            </NavLink>
+          </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE BUTTON */}
           <button
-            className="md:hidden text-2xl text-primary"
             onClick={() => setMenuOpen(true)}
+            className="lg:hidden text-2xl text-blue-600"
           >
             <FaBars />
           </button>
-
         </div>
       </header>
 
-      {/* 🔥 BACKDROP */}
+      {/* OVERLAY */}
       <div
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity ${
+        onClick={() => setMenuOpen(false)}
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition ${
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
-        onClick={() => setMenuOpen(false)}
       ></div>
 
-      {/* 🔥 MOBILE DRAWER */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[75%] max-w-sm bg-white z-50 shadow-xl transform transition-transform duration-300 ${
+      {/* MOBILE DRAWER */}
+      <aside
+        className={`fixed top-0 right-0 h-full w-[82%] max-w-sm bg-white z-50 shadow-2xl transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-
         {/* HEADER */}
-        <div className="flex justify-between items-center p-5 border-b">
-          <h2 className="text-lg font-semibold">Menu</h2>
+        <div className="flex items-center justify-between px-5 py-5 border-b">
+          <h2 className="font-bold text-blue-600 text-lg">
+            Codebaby Software
+          </h2>
 
           <button
-            className="text-xl"
             onClick={() => setMenuOpen(false)}
+            className="text-xl"
           >
             <FaTimes />
           </button>
         </div>
 
         {/* LINKS */}
-        <nav className="flex flex-col gap-4 p-5 text-lg">
+        <div className="p-5 flex flex-col gap-4 text-sm font-medium">
 
-          {[
-            { name: "Home", path: "/" },
-            { name: "Courses", path: "/courses" },
-            { name: "Projects", path: "/projects" },
-            { name: "Internships", path: "/internships" },
-            { name: "About", path: "/about" },
-            { name: "Contact", path: "/contact" }
-          ].map((item, i) => (
-            <NavLink
-              key={i}
-              to={item.path}
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-primary transition"
+          <NavLink to="/" end onClick={() => setMenuOpen(false)} className={navLinkClass}>
+            HOME
+          </NavLink>
+
+          <NavLink to="/courses" onClick={() => setMenuOpen(false)} className={navLinkClass}>
+            COURSES
+          </NavLink>
+
+          {/* MOBILE PROJECTS */}
+          <div>
+            <button
+              onClick={() => setMobileProjects(!mobileProjects)}
+              className="flex justify-between items-center w-full text-left"
             >
-              {item.name}
-            </NavLink>
-          ))}
+              <span>PROJECTS</span>
+              <FaChevronDown
+                className={`transition ${mobileProjects ? "rotate-180" : ""}`}
+              />
+            </button>
 
-        </nav>
+            {mobileProjects && (
+              <div className="mt-3 ml-3 flex flex-col gap-3 text-gray-600">
+                <Link to="/projects?type=academic" onClick={() => setMenuOpen(false)}>
+                  Academic Projects
+                </Link>
+                <Link to="/projects?type=mini" onClick={() => setMenuOpen(false)}>
+                  Mini Projects
+                </Link>
+                <Link to="/projects?type=industrial" onClick={() => setMenuOpen(false)}>
+                  Industrial Projects
+                </Link>
+              </div>
+            )}
+          </div>
 
-        {/* CTA */}
-        <div className="p-5 mt-auto">
-          <Link
+          {/* MOBILE PLACEMENTS */}
+          <div>
+            <button
+              onClick={() => setMobilePlacements(!mobilePlacements)}
+              className="flex justify-between items-center w-full text-left"
+            >
+              <span>PLACEMENTS</span>
+              <FaChevronDown
+                className={`transition ${mobilePlacements ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {mobilePlacements && (
+              <div className="mt-3 ml-3 flex flex-col gap-3 text-gray-600">
+                <NavLink to="/placements" onClick={() => setMenuOpen(false)}>
+                  Placement Services
+                </NavLink>
+
+                <NavLink to="/mock-interviews" onClick={() => setMenuOpen(false)}>
+                  Mock Interviews
+                </NavLink>
+              </div>
+            )}
+          </div>
+
+          <NavLink
+            to="/internships"
+            onClick={() => setMenuOpen(false)}
+            className={navLinkClass}
+          >
+            INTERNSHIPS
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            onClick={() => setMenuOpen(false)}
+            className={navLinkClass}
+          >
+            ABOUT
+          </NavLink>
+
+          <NavLink
             to="/contact"
             onClick={() => setMenuOpen(false)}
-            className="block text-center bg-primary text-white py-3 rounded-lg"
+            className={navLinkClass}
           >
-            Get Started
-          </Link>
+            CONTACT US
+          </NavLink>
         </div>
-
-      </div>
+      </aside>
     </>
   );
 };
