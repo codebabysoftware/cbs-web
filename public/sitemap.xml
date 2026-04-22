@@ -1,36 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
 
-<url>
-<loc>https://codebabysoftware.in/</loc>
-</url>
+  <!-- HOME -->
+  <url>
+    <loc>https://codebabysoftware.in/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url>
-<loc>https://codebabysoftware.in/about</loc>
-</url>
+  <!-- MAIN PAGES -->
+  <url>
+    <loc>https://codebabysoftware.in/about</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://codebabysoftware.in/contact</loc>
-</url>
+  <url>
+    <loc>https://codebabysoftware.in/contact</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://codebabysoftware.in/courses</loc>
-</url>
+  <!-- SERVICES -->
+  <url>
+    <loc>https://codebabysoftware.in/courses</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://codebabysoftware.in/projects</loc>
-</url>
+  <url>
+    <loc>https://codebabysoftware.in/projects</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://codebabysoftware.in/placements</loc>
-</url>
+  <url>
+    <loc>https://codebabysoftware.in/placements</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://codebabysoftware.in/mock-interviews</loc>
-</url>
+  <url>
+    <loc>https://codebabysoftware.in/mock-interviews</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://codebabysoftware.in/internships</loc>
-</url>
+  <url>
+    <loc>https://codebabysoftware.in/internships</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- COURSE DETAILS -->
+  <url>
+    <loc>https://codebabysoftware.in/courses/java-full-stack-development</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebabysoftware.in/courses/python-full-stack-development</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebabysoftware.in/courses/frontend-development-react</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebabysoftware.in/courses/backend-development-nodejs</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PROJECT DETAILS -->
+  <url>
+    <loc>https://codebabysoftware.in/projects/ai-resume-builder</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebabysoftware.in/projects/student-management-system</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebabysoftware.in/projects/ecommerce-store</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- INTERNSHIP DETAILS -->
+  <url>
+    <loc>https://codebabysoftware.in/internships/java-full-stack-internship</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebabysoftware.in/internships/python-full-stack-internship</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codebabysoftware.in/internships/frontend-react-internship</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>

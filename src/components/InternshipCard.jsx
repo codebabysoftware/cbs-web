@@ -1,37 +1,119 @@
-const InternshipCard = ({ internship }) => {
+// src/components/InternshipCard.jsx
 
-  const enroll = () => {
-    let list = JSON.parse(localStorage.getItem("internships")) || [];
-    list.push(internship);
-    localStorage.setItem("internships", JSON.stringify(list));
-    alert("Enrolled in internship!");
-  };
+import { Link } from "react-router-dom";
+import {
+  FaArrowRight,
+  FaClock,
+  FaSignal,
+  FaLayerGroup,
+  FaLaptopCode,
+  FaCertificate,
+  FaStar,
+} from "react-icons/fa";
+
+const fallbackImage =
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80";
+
+const InternshipCard = ({ internship }) => {
+  if (!internship) return null;
+
+  const {
+    id,
+    slug,
+    title,
+    category,
+    level,
+    duration,
+    thumbnail,
+    shortDescription,
+  } = internship;
+
+  const url = `/internships/${slug || id}`;
 
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6">
+    <div className="group h-full bg-white border border-blue-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
 
-      <h2 className="text-lg font-semibold">{internship.title}</h2>
+      {/* IMAGE */}
+      <div className="relative h-52 overflow-hidden">
 
-      <p className="text-gray-500 text-sm mt-2">
-        {internship.description}
-      </p>
+        <img
+          src={thumbnail || fallbackImage}
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+        />
 
-      <p className="text-sm mt-2 text-gray-400">
-        Duration: {internship.duration}
-      </p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
 
-      <div className="flex justify-between items-center mt-4">
-        <span className="text-primary font-bold">
-          ₹{internship.price}
+        <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-blue-700 text-xs font-semibold shadow">
+          {category || "Internship"}
         </span>
 
-        <button
-          onClick={enroll}
-          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition"
-        >
-          Apply
-        </button>
+        <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 text-gray-800 text-xs font-medium shadow">
+          <FaStar className="text-yellow-500" />
+          Practical Program
+        </div>
+
       </div>
+
+      {/* CONTENT */}
+      <div className="p-6 flex flex-col h-[calc(100%-13rem)]">
+
+        {/* ICON */}
+        <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl">
+          <FaLaptopCode />
+        </div>
+
+        {/* TITLE */}
+        <h3 className="mt-4 text-xl font-bold text-gray-900 line-clamp-2 leading-snug">
+          {title}
+        </h3>
+
+        {/* DESC */}
+        <p className="mt-3 text-sm text-gray-600 line-clamp-3 leading-relaxed">
+          {shortDescription ||
+            "Industry-oriented internship with live tasks and mentor guidance."}
+        </p>
+
+        {/* META */}
+        <div className="mt-5 space-y-2 text-sm text-gray-600">
+
+          <div className="flex items-center gap-2">
+            <FaClock className="text-blue-500 shrink-0" />
+            <span>{duration || "Flexible Duration"}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <FaSignal className="text-blue-500 shrink-0" />
+            <span>{level || "All Levels"}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <FaLayerGroup className="text-blue-500 shrink-0" />
+            <span>{category || "Technology"}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <FaCertificate className="text-blue-500 shrink-0" />
+            <span>Certificate Included</span>
+          </div>
+
+        </div>
+
+        {/* CTA */}
+        <div className="mt-auto pt-6">
+
+          <Link
+            to={url}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition"
+          >
+            View Internship
+            <FaArrowRight className="text-sm" />
+          </Link>
+
+        </div>
+
+      </div>
+
     </div>
   );
 };

@@ -1,4 +1,21 @@
+# public/robots.txt
+
 User-agent: *
 Allow: /
 
+# Important folders allowed
+Allow: /assets/
+Allow: /images/
+
+# Prevent crawling irrelevant/internal files if exposed
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.well-known/
+Disallow: /tmp/
+Disallow: /test/
+
+# Sitemap
 Sitemap: https://codebabysoftware.in/sitemap.xml
+
+# Host
+Host: https://codebabysoftware.in
