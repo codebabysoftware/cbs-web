@@ -1,186 +1,257 @@
-import mernstack from "../assets/images/course/mernstack.png";
-import java from "../assets/images/course/java.png";
-import ds from "../assets/images/course/ds.png";
-import py from "../assets/images/course/py.png";
-export const courses = [
+// src/data/courses.js
+
+const courses = [
   {
     id: 1,
-    title: "MERN Stack Development",
-    price: 5999,
-    thumbnail: mernstack,
-    description: "Build scalable web applications using MongoDB, Express, React, and Node.js.",
+    slug: "java-full-stack-development",
+    title: "Java Full Stack Development",
+    category: "Full Stack",
     level: "Beginner to Advanced",
-    duration: "5 Months",
-
-    syllabus: [
-      "Phase 1: HTML, CSS, JavaScript Fundamentals",
-      "Phase 2: Advanced JavaScript (ES6+, DOM, Async JS)",
-      "Phase 3: React.js (Components, Hooks, Routing)",
-      "Phase 4: State Management & API Integration",
-      "Phase 5: Node.js & Express Backend",
-      "Phase 6: MongoDB Database",
-      "Phase 7: Authentication & Security",
-      "Phase 8: Full Stack Projects",
-      "Phase 9: Deployment"
+    duration: "6 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Master Java, Spring Boot, MySQL, React and build production-ready full stack applications.",
+    description:
+      "A complete industry-focused Java Full Stack course covering core Java, OOPs, JDBC, Servlets, Spring Boot, REST APIs, React, Git and deployment.",
+    modules: [
+      "Programming Fundamentals",
+      "Core Java + OOPs",
+      "Collections + Exception Handling",
+      "JDBC + SQL + MySQL",
+      "Servlet + JSP Basics",
+      "Spring Boot + REST APIs",
+      "React Frontend",
+      "Authentication + Security",
+      "Projects + Deployment",
+      "Interview Preparation",
     ],
-
-    tools: [
-      "HTML", "CSS", "JavaScript", "React",
-      "Node.js", "Express", "MongoDB", "Git", "Postman"
+    outcomes: [
+      "Become Full Stack Java Developer",
+      "Build Real Projects",
+      "Backend + Frontend Mastery",
+      "Interview Ready Skills",
+      "Resume Ready Portfolio",
+      "Placement Support",
     ],
-
-    projects: [
-      "Full Stack E-commerce App",
-      "Authentication System",
-      "Blog Platform",
-      "Portfolio Deployment"
-    ],
-
-    advantages: [
-      "Real-world projects",
-      "Full stack mastery",
-      "Industry-ready skills"
-    ],
-
-    careers: [
-      "Frontend Developer",
-      "Backend Developer",
-      "Full Stack Developer"
-    ]
   },
 
   {
     id: 2,
-    title: "Java Full Stack Development",
-    price: 4999,
-    thumbnail: java,
-    description: "Master Java, Spring Boot, and frontend integration.",
-    level: "Intermediate",
-    duration: "4 Months",
-
-    syllabus: [
-      "Phase 1: Core Java",
-      "Phase 2: OOP Concepts",
-      "Phase 3: Collections & Multithreading",
-      "Phase 4: JDBC",
-      "Phase 5: Spring Boot",
-      "Phase 6: Hibernate",
-      "Phase 7: Frontend Basics",
-      "Phase 8: Full Stack Integration",
-      "Phase 9: Deployment"
+    slug: "python-full-stack-development",
+    title: "Python Full Stack Development",
+    category: "Full Stack",
+    level: "Beginner to Advanced",
+    duration: "6 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Learn Python, Django, APIs, React and deploy complete modern web applications.",
+    description:
+      "Comprehensive Python Full Stack program covering Python fundamentals, Django backend, database systems, APIs and frontend integration.",
+    modules: [
+      "Python Fundamentals",
+      "OOP in Python",
+      "Django Framework",
+      "REST APIs",
+      "PostgreSQL / MySQL",
+      "React Frontend",
+      "Authentication",
+      "Projects",
+      "Deployment",
+      "Interview Training",
     ],
-
-    tools: [
-      "Java", "Spring Boot", "Hibernate",
-      "MySQL", "JDBC", "HTML", "CSS", "Git"
+    outcomes: [
+      "Python Full Stack Readiness",
+      "Real Project Experience",
+      "Backend Logic Skills",
+      "Frontend Integration",
+      "Interview Preparation",
+      "Placement Guidance",
     ],
-
-    projects: [
-      "Employee Management System",
-      "REST API Project",
-      "Full Stack Web App"
-    ],
-
-    advantages: [
-      "Enterprise-level skills",
-      "Backend expertise",
-      "High demand tech"
-    ],
-
-    careers: [
-      "Java Developer",
-      "Backend Engineer",
-      "Software Engineer"
-    ]
   },
 
   {
     id: 3,
-    title: "Data Structures & Algorithms",
-    price: 3999,
-    thumbnail: ds,
-    description: "Master problem solving for interviews.",
-    level: "All Levels",
-    duration: "3 Months",
-
-    syllabus: [
-      "Phase 1: Complexity Analysis",
-      "Phase 2: Arrays & Strings",
-      "Phase 3: Linked Lists",
-      "Phase 4: Stacks & Queues",
-      "Phase 5: Trees",
-      "Phase 6: Graphs",
-      "Phase 7: Recursion",
-      "Phase 8: Dynamic Programming",
-      "Phase 9: Interview Prep"
+    slug: "frontend-development-react",
+    title: "Frontend Development with React",
+    category: "Frontend",
+    level: "Beginner to Intermediate",
+    duration: "4 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Learn HTML, CSS, JavaScript, React and build responsive modern websites.",
+    description:
+      "Practical frontend development course focused on UI building, responsive design, React components, routing and deployment.",
+    modules: [
+      "HTML5",
+      "CSS3",
+      "JavaScript ES6+",
+      "Responsive Design",
+      "React Basics",
+      "React Router",
+      "API Integration",
+      "Portfolio Projects",
     ],
-
-    tools: [
-      "C++", "Java", "Python",
-      "LeetCode", "Codeforces", "HackerRank"
+    outcomes: [
+      "Frontend Developer Skills",
+      "Modern UI Building",
+      "Responsive Design Mastery",
+      "React Project Portfolio",
     ],
-
-    projects: [
-      "Algorithm Visualizer",
-      "Problem Solver Toolkit"
-    ],
-
-    advantages: [
-      "Interview preparation",
-      "Strong logic building",
-      "Coding mastery"
-    ],
-
-    careers: [
-      "Software Engineer",
-      "Competitive Programmer"
-    ]
   },
 
   {
     id: 4,
-    title: "Python for AI & ML",
-    price: 6999,
-    thumbnail: py,
-    description: "Build AI models and ML systems.",
-    level: "Advanced",
-    duration: "6 Months",
-
-    syllabus: [
-      "Phase 1: Python Basics",
-      "Phase 2: NumPy & Pandas",
-      "Phase 3: Data Visualization",
-      "Phase 4: Statistics",
-      "Phase 5: Machine Learning",
-      "Phase 6: Model Evaluation",
-      "Phase 7: Deep Learning",
-      "Phase 8: NLP",
-      "Phase 9: AI Projects"
+    slug: "backend-development-nodejs",
+    title: "Backend Development with Node.js",
+    category: "Backend",
+    level: "Intermediate",
+    duration: "4 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Build scalable APIs using Node.js, Express, MongoDB and authentication systems.",
+    description:
+      "Backend engineering program covering server-side development, REST APIs, JWT auth, databases and deployment workflows.",
+    modules: [
+      "Node.js Basics",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT Authentication",
+      "REST API Design",
+      "Security Practices",
+      "Deployment",
     ],
-
-    tools: [
-      "Python", "NumPy", "Pandas",
-      "Scikit-learn", "TensorFlow", "Jupyter Notebook"
+    outcomes: [
+      "Backend API Development",
+      "Database Design Skills",
+      "Authentication Systems",
+      "Production Deployment",
     ],
+  },
 
-    projects: [
-      "ML Prediction Model",
-      "AI Chatbot",
-      "Recommendation System"
+  {
+    id: 5,
+    slug: "data-science-python",
+    title: "Data Science with Python",
+    category: "Data",
+    level: "Beginner to Intermediate",
+    duration: "5 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1518186233392-c232efbf2373?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Learn Python, NumPy, Pandas, visualization and machine learning foundations.",
+    description:
+      "Career-focused data science course covering analysis, visualization, statistics and machine learning workflows.",
+    modules: [
+      "Python for Data",
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+      "Statistics Basics",
+      "Machine Learning Intro",
+      "Projects",
+      "Case Studies",
     ],
-
-    advantages: [
-      "Future-ready skills",
-      "AI expertise",
-      "High salary domain"
+    outcomes: [
+      "Data Analysis Skills",
+      "ML Foundations",
+      "Dashboard Thinking",
+      "Portfolio Projects",
     ],
+  },
 
-    careers: [
-      "Data Scientist",
-      "ML Engineer",
-      "AI Engineer"
-    ]
-  }
+  {
+    id: 6,
+    slug: "ui-ux-design-masterclass",
+    title: "UI/UX Design Masterclass",
+    category: "UI/UX",
+    level: "Beginner",
+    duration: "3 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Learn wireframing, user research, prototyping and modern UI design systems.",
+    description:
+      "Hands-on UI/UX course using Figma and design thinking for apps and websites.",
+    modules: [
+      "Design Principles",
+      "User Research",
+      "Wireframes",
+      "Figma Tools",
+      "Design Systems",
+      "Prototype Creation",
+      "Case Studies",
+    ],
+    outcomes: [
+      "UI/UX Fundamentals",
+      "Portfolio Designs",
+      "Figma Mastery",
+      "Product Design Thinking",
+    ],
+  },
+
+  {
+    id: 7,
+    slug: "devops-cloud-engineering",
+    title: "DevOps & Cloud Engineering",
+    category: "Backend",
+    level: "Intermediate",
+    duration: "5 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Master Linux, Git, Docker, CI/CD, AWS basics and deployment automation.",
+    description:
+      "Industry-ready DevOps training for deployment pipelines, containers and cloud workflows.",
+    modules: [
+      "Linux Basics",
+      "Git & GitHub",
+      "Docker",
+      "CI/CD Pipelines",
+      "AWS Basics",
+      "Monitoring",
+      "Project Deployment",
+    ],
+    outcomes: [
+      "Deployment Skills",
+      "Cloud Readiness",
+      "Automation Mindset",
+      "DevOps Projects",
+    ],
+  },
+
+  {
+    id: 8,
+    slug: "software-testing-qa",
+    title: "Software Testing & QA",
+    category: "Backend",
+    level: "Beginner",
+    duration: "3 Months",
+    thumbnail:
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+    shortDescription:
+      "Manual testing, automation basics, bug tracking and QA lifecycle mastery.",
+    description:
+      "Testing-focused course covering SDLC, STLC, manual testing, Selenium basics and reporting.",
+    modules: [
+      "Testing Fundamentals",
+      "Manual Testing",
+      "Test Cases",
+      "Bug Tracking",
+      "Selenium Basics",
+      "QA Projects",
+    ],
+    outcomes: [
+      "QA Engineer Readiness",
+      "Testing Documentation",
+      "Automation Intro",
+      "Interview Preparation",
+    ],
+  },
 ];
 
 export default courses;
