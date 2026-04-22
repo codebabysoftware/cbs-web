@@ -1,7 +1,6 @@
 // src/pages/MockInterviews.jsx
 
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import {
   FaArrowRight,
   FaWhatsapp,
@@ -15,56 +14,71 @@ import {
   FaChartLine,
   FaBriefcase,
   FaClipboardList,
+  FaBullseye,
+  FaFileAlt,
+  FaHandshake,
+  FaClock,
 } from "react-icons/fa";
 
-const GOOGLE_FORM_LINK = "https://forms.gle/YOUR_GOOGLE_FORM_LINK";
+import forms from "../data/forms";
 
-const mockTypes = [
+const interviewTypes = [
   {
     icon: FaUserTie,
     title: "HR Mock Interview",
-    desc: "Communication, self-introduction, HR questions, salary discussion, confidence and behavioral round practice.",
+    desc: "Communication, introductions, behavioral questions, confidence and salary discussion preparation.",
   },
   {
     icon: FaLaptopCode,
     title: "Technical Mock Interview",
-    desc: "Coding rounds, programming concepts, debugging, DBMS, projects and role-specific technical preparation.",
+    desc: "Coding, DSA basics, project explanation, debugging and role-specific technical rounds.",
   },
   {
     icon: FaUsers,
-    title: "Panel Mock Interview",
-    desc: "Simulated real company panel experience with pressure handling and multiple interviewer scenarios.",
+    title: "Panel Interview",
+    desc: "Realistic multiple interviewer simulation to improve pressure handling and clarity.",
   },
   {
     icon: FaBriefcase,
     title: "Experienced Candidate Mock",
-    desc: "Switch preparation, project explanation, leadership questions, system thinking and role transitions.",
+    desc: "Switch preparation, leadership rounds, project ownership and senior-level interviews.",
   },
 ];
 
 const benefits = [
-  "1:1 Personalized Sessions",
-  "Detailed Feedback & Scoring",
-  "Resume Review Suggestions",
-  "Communication Improvement",
-  "Confidence Building Guidance",
-  "Technical + HR Combined Practice",
+  "1:1 Personalized Session",
+  "Detailed Feedback Report",
+  "Resume Review Guidance",
+  "Confidence Building Strategy",
+  "Technical + HR Preparation",
+  "Interview Performance Score",
 ];
 
 const process = [
-  "Choose your target role / experience level",
-  "Fill the booking form",
-  "Get session slot confirmation",
+  "Choose your target role",
+  "Fill booking form",
+  "Get slot confirmation",
   "Attend live mock interview",
-  "Receive expert feedback report",
-  "Improve weak areas and retry confidently",
+  "Receive feedback report",
+  "Improve weak areas & retry",
+];
+
+const whoShouldJoin = [
+  "Freshers preparing for first job",
+  "Students entering campus placements",
+  "Working professionals switching jobs",
+  "Candidates with interview fear",
+  "Anyone needing real practice",
 ];
 
 const MockInterviews = () => {
   return (
     <>
       <Helmet>
-        <title>Mock Interviews | Codebaby Software</title>
+        <title>
+          Mock Interviews | HR & Technical Practice | Codebaby Software
+        </title>
+
         <meta
           name="description"
           content="Book premium mock interviews with Codebaby Software. HR, technical, panel and experienced candidate interview practice with real feedback."
@@ -97,12 +111,12 @@ const MockInterviews = () => {
               </h1>
 
               <p className="mt-6 text-gray-600 text-base md:text-lg leading-relaxed">
-                Practice with professionals through realistic mock interviews.
-                Improve communication, technical answers, confidence, and final
-                interview performance.
+                Practice with professionals through realistic interview sessions.
+                Improve communication, technical answers, body language and final
+                performance before real opportunities.
               </p>
 
-              {/* TRUST PILLS */}
+              {/* PILLS */}
               <div className="mt-8 flex flex-wrap gap-3">
 
                 {[
@@ -125,28 +139,28 @@ const MockInterviews = () => {
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
 
                 <a
-                  href={GOOGLE_FORM_LINK}
+                  href={forms.mockInterviews}
                   target="_blank"
                   rel="noreferrer"
                   className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition flex items-center justify-center gap-2"
                 >
-                  Book Mock Interview <FaArrowRight />
+                  Book Interview <FaArrowRight />
                 </a>
 
                 <a
-                  href="https://wa.me/918073369741?text=Hi%20I%20want%20details%20about%20mock%20interview."
+                  href="https://wa.me/918073369741?text=Hi%20I%20want%20mock%20interview%20details."
                   target="_blank"
                   rel="noreferrer"
                   className="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition flex items-center justify-center gap-2"
                 >
-                  WhatsApp Us <FaWhatsapp />
+                  WhatsApp <FaWhatsapp />
                 </a>
 
               </div>
 
             </div>
 
-            {/* RIGHT CARD */}
+            {/* RIGHT */}
             <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 text-white shadow-2xl">
 
               <div className="grid grid-cols-2 gap-4">
@@ -173,7 +187,7 @@ const MockInterviews = () => {
                     Real Interview Simulation
                   </h3>
                   <p className="text-sm text-blue-100 mt-2">
-                    Practice before your actual opportunity.
+                    Practice before actual opportunities.
                   </p>
                 </div>
 
@@ -185,12 +199,13 @@ const MockInterviews = () => {
 
         </section>
 
-        {/* INTERVIEW TYPES */}
+        {/* TYPES */}
         <section className="py-16 md:py-24 bg-white">
 
           <div className="container-custom">
 
             <div className="text-center max-w-3xl mx-auto">
+
               <p className="text-blue-600 font-semibold uppercase text-sm">
                 Interview Types
               </p>
@@ -198,11 +213,12 @@ const MockInterviews = () => {
               <h2 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900">
                 Choose Your Preparation Style
               </h2>
+
             </div>
 
             <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-              {mockTypes.map((item, i) => {
+              {interviewTypes.map((item, i) => {
                 const Icon = item.icon;
 
                 return (
@@ -244,7 +260,7 @@ const MockInterviews = () => {
               </p>
 
               <h2 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900">
-                Real Improvement, Fast
+                Real Improvement Fast
               </h2>
 
               <div className="mt-8 space-y-4">
@@ -280,10 +296,7 @@ const MockInterviews = () => {
               <div className="mt-8 space-y-4">
 
                 {process.map((step, i) => (
-                  <div
-                    key={i}
-                    className="flex gap-4 items-start"
-                  >
+                  <div key={i} className="flex gap-4 items-start">
                     <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold shrink-0">
                       {i + 1}
                     </div>
@@ -291,7 +304,6 @@ const MockInterviews = () => {
                     <p className="text-gray-700 pt-1">
                       {step}
                     </p>
-
                   </div>
                 ))}
 
@@ -303,7 +315,86 @@ const MockInterviews = () => {
 
         </section>
 
-        {/* FINAL CTA */}
+        {/* WHO SHOULD JOIN */}
+        <section className="py-16 md:py-24 bg-white">
+
+          <div className="container-custom grid lg:grid-cols-2 gap-10 items-center">
+
+            <div>
+
+              <p className="text-blue-600 font-semibold uppercase text-sm">
+                Who Should Join
+              </p>
+
+              <h2 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900">
+                Designed For Real Candidates
+              </h2>
+
+              <p className="mt-6 text-gray-600 leading-relaxed">
+                If interviews make you nervous or you want sharper answers,
+                structured feedback and better performance — this is for you.
+              </p>
+
+            </div>
+
+            <div className="space-y-4">
+
+              {whoShouldJoin.map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-blue-50 border border-blue-100 rounded-2xl p-4 flex gap-3"
+                >
+                  <FaBullseye className="text-blue-600 mt-1" />
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* BONUS */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-white via-blue-50 to-white">
+
+          <div className="container-custom grid md:grid-cols-3 gap-6">
+
+            <div className="bg-white border border-blue-100 rounded-3xl p-6 shadow-md">
+              <FaFileAlt className="text-blue-600 text-2xl" />
+              <h3 className="mt-4 text-xl font-bold text-gray-900">
+                Resume Review
+              </h3>
+              <p className="mt-3 text-gray-600">
+                Improve ATS quality and first impression before applying.
+              </p>
+            </div>
+
+            <div className="bg-white border border-blue-100 rounded-3xl p-6 shadow-md">
+              <FaHandshake className="text-blue-600 text-2xl" />
+              <h3 className="mt-4 text-xl font-bold text-gray-900">
+                HR Confidence
+              </h3>
+              <p className="mt-3 text-gray-600">
+                Improve communication, clarity and professional presence.
+              </p>
+            </div>
+
+            <div className="bg-white border border-blue-100 rounded-3xl p-6 shadow-md">
+              <FaClock className="text-blue-600 text-2xl" />
+              <h3 className="mt-4 text-xl font-bold text-gray-900">
+                Fast Booking
+              </h3>
+              <p className="mt-3 text-gray-600">
+                Get slots quickly and start preparing immediately.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* CTA */}
         <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
 
           <div className="container-custom text-center max-w-3xl mx-auto">
@@ -314,39 +405,27 @@ const MockInterviews = () => {
 
             <p className="mt-5 text-blue-100 leading-relaxed">
               Book your mock interview today and walk into real interviews with
-              confidence.
+              clarity and confidence.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
 
               <a
-                href={GOOGLE_FORM_LINK}
+                href={forms.mockInterviews}
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-3 bg-white text-blue-700 rounded-xl font-semibold hover:bg-blue-50 transition flex items-center justify-center gap-2"
               >
-                Apply Now <FaArrowRight />
+                Book Now <FaArrowRight />
               </a>
 
-              <a
-                href="https://wa.me/918073369741?text=Hi%20I%20want%20to%20book%20mock%20interview."
-                target="_blank"
-                rel="noreferrer"
-                className="px-6 py-3 border border-white text-white rounded-xl font-semibold hover:bg-white/10 transition flex items-center justify-center gap-2"
-              >
-                WhatsApp <FaWhatsapp />
-              </a>
-
-            </div>
-
-            <div className="mt-6">
               <a
                 href="tel:+918073369741"
-                className="inline-flex items-center gap-2 text-blue-100 hover:text-white transition"
+                className="px-6 py-3 border border-white text-white rounded-xl font-semibold hover:bg-white/10 transition flex items-center justify-center gap-2"
               >
-                <FaPhoneAlt />
-                +91 8073369741
+                Call Now <FaPhoneAlt />
               </a>
+
             </div>
 
           </div>

@@ -104,3 +104,5 @@ export const internships = [
     demoVideo: "https://www.youtube.com/embed/2ePf9rue1Ao"
   }
 ];
+
+export default internships;

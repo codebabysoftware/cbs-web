@@ -117,7 +117,7 @@ const Navbar = () => {
               onMouseLeave={() => setPlacementsDropdown(false)}
             >
               <NavLink
-                to="/placements"
+                to="/Placements"
                 className={navLinkClass}
               >
                 PLACEMENTS
@@ -131,7 +131,7 @@ const Navbar = () => {
                 }`}
               >
                 <Link
-                  to="/placements"
+                  to="/Placements"
                   className="block px-5 py-3 hover:bg-blue-50 rounded-t-xl text-sm"
                 >
                   Placement Services

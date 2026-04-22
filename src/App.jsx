@@ -1,55 +1,68 @@
-import { Routes, Route } from "react-router-dom";
+// src/App.jsx
 
-// Layout Components
+import { Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
+import FloatingButtons from "./components/common/FloatingContactButtons";
 
-// Pages
 import Home from "./pages/Home";
-import Courses from "./pages/Courses";
-import CourseDetails from "./pages/CourseDetails";
-import Projects from "./pages/Projects";
-import Internships from "./pages/Internships";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+
+import Courses from "./pages/Courses";
+import CourseDetails from "./pages/CourseDetails";
+
+import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
-import InternshipDetails from "./pages/InternshipDetails";
+
+import Placements from "./pages/Placements";
 import MockInterviews from "./pages/MockInterviews";
-import FloatingContactButtons from "./components/common/FloatingContactButtons";
-// Optional: 404 Page (recommended)
-const NotFound = () => (
-  <div className="min-h-screen flex items-center justify-center text-xl font-semibold">
-    404 - Page Not Found
-  </div>
-);
+
+import Internships from "./pages/Internships";
+import InternshipDetails from "./pages/InternshipDetails";
+
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <>
-      {/* 🔝 Navbar */}
-      <Navbar />
+    <HelmetProvider>
+      <div className="min-h-screen bg-white text-gray-900 flex flex-col">
 
-      {/* 🔥 Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/courses/:id" element={<CourseDetails />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/internships" element={<Internships />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects/:id" element={<ProjectDetails />} />
-        <Route path="/internships/:id" element={<InternshipDetails />} />
-        <Route path="/mock-interviews" element={<MockInterviews />} />
-        <Route path="/floating-contact-buttons" element={<FloatingContactButtons />} />
+        <Navbar />
 
-        {/* 🚨 Fallback Route */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-      {/* 🔻 Footer */}
-      <Footer />
-    </>
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/courses/:slug" element={<CourseDetails />} />
+
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetails />} />
+
+            <Route path="/placements" element={<Placements />} />
+            <Route path="/mock-interviews" element={<MockInterviews />} />
+
+            <Route path="/internships" element={<Internships />} />
+            <Route
+              path="/internships/:slug"
+              element={<InternshipDetails />}
+            />
+
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+
+        <Footer />
+        <FloatingButtons />
+
+      </div>
+    </HelmetProvider>
   );
 }
 
