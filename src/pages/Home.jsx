@@ -1,12 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import HeroSection from "../components/home/HeroSection";
 import ServicesSection from "../components/home/ServicesSection";
+import WhyChooseUsSection from "../components/home/WhyChooseUsSection";
 import TrustSection from "../components/home/TrustSection";
 import CoursesPreview from "../components/home/CoursesPreview";
-import ProjectsPreview from "../components/home/ProjectsPreview";
+import ProjectsShowcaseSection from "../components/home/ProjectsShowcaseSection";
 import InternshipsPreview from "../components/home/InternshipsPreview";
-import CTASection from "../components/home/CTASection";
-
+import PlacementCTASection from "../components/home/PlacementCTASection";
+import StatsCounterSection from "../components/home/StatsCounterSection";
+import TestimonialsSection from "../components/home/TestimonialsSection";
+import FinalCTASection from "../components/home/FinalCTASection";
 const Home = () => {
   return (
     <>
@@ -20,11 +23,15 @@ const Home = () => {
 
       <HeroSection />
       <ServicesSection />
+      <WhyChooseUsSection />
       <TrustSection />
       <CoursesPreview />
-      <ProjectsPreview />
+      <ProjectsShowcaseSection />
       <InternshipsPreview />
-      <CTASection />
+      <PlacementCTASection />
+      <StatsCounterSection />
+      <TestimonialsSection />
+      <FinalCTASection />
     </>
   );
 };

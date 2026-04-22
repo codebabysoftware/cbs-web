@@ -182,3 +182,5 @@ export const courses = [
     ]
   }
 ];
+
+export default courses;

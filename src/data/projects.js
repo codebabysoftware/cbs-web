@@ -146,3 +146,5 @@ export const projects = [
     demoVideo: "https://www.youtube.com/embed/Ke90Tje7VS0",
   },
 ];
+
+export default projects;
