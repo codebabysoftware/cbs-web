@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import ProjectDetails from "./pages/ProjectDetails";
 import InternshipDetails from "./pages/InternshipDetails";
 import MockInterviews from "./pages/MockInterviews";
+import FloatingContactButtons from "./components/common/FloatingContactButtons";
 // Optional: 404 Page (recommended)
 const NotFound = () => (
   <div className="min-h-screen flex items-center justify-center text-xl font-semibold">
@@ -40,6 +41,7 @@ function App() {
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/internships/:id" element={<InternshipDetails />} />
         <Route path="/mock-interviews" element={<MockInterviews />} />
+        <Route path="/floating-contact-buttons" element={<FloatingContactButtons />} />
 
         {/* 🚨 Fallback Route */}
         <Route path="*" element={<NotFound />} />
