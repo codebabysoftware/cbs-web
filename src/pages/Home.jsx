@@ -16,16 +16,18 @@ import FinalCTASection from "../components/home/FinalCTASection";
 const Home = () => {
   return (
     <>
-      {/* SEO */}
+      {/* ======================================
+          SEO
+      ====================================== */}
       <Helmet>
         <title>
-          Codebaby Software | Courses, Placements, Projects &
-          Software Solutions
+          Codebaby Software | Courses, Placements,
+          Projects & Software Solutions
         </title>
 
         <meta
           name="description"
-          content="Codebaby Software helps students and businesses grow through IT courses, placements, internships, mock interviews, projects, and software solutions."
+          content="Codebaby Software helps students and businesses grow through IT courses, placements, internships, mock interviews, projects and software solutions."
         />
 
         <meta
@@ -47,37 +49,62 @@ const Home = () => {
           property="og:type"
           content="website"
         />
+
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
       </Helmet>
 
-      {/* PAGE WRAPPER */}
-      <main className="overflow-hidden bg-white">
+      {/* ======================================
+          PAGE WRAPPER
+      ====================================== */}
+      <main className="overflow-x-hidden bg-white min-h-screen">
 
         {/* HERO */}
-        <HeroSection />
+        <section className="relative">
+          <HeroSection />
+        </section>
 
         {/* SERVICES */}
-        <ServicesSection />
+        <section className="relative">
+          <ServicesSection />
+        </section>
 
         {/* WHY CHOOSE US */}
-        <WhyChooseUsSection />
+        <section className="relative">
+          <WhyChooseUsSection />
+        </section>
 
         {/* COURSES */}
-        <CoursesPreviewSection />
+        <section className="relative">
+          <CoursesPreviewSection />
+        </section>
 
         {/* PLACEMENTS CTA */}
-        <PlacementCTASection />
+        <section className="relative">
+          <PlacementCTASection />
+        </section>
 
         {/* PROJECTS */}
-        <ProjectsShowcaseSection />
+        <section className="relative">
+          <ProjectsShowcaseSection />
+        </section>
 
         {/* STATS */}
-        <StatsCounterSection />
+        <section className="relative">
+          <StatsCounterSection />
+        </section>
 
         {/* TESTIMONIALS */}
-        <TestimonialsSection />
+        <section className="relative">
+          <TestimonialsSection />
+        </section>
 
         {/* FINAL CTA */}
-        <FinalCTASection />
+        <section className="relative">
+          <FinalCTASection />
+        </section>
 
       </main>
     </>

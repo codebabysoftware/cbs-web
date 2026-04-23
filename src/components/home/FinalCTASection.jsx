@@ -17,61 +17,69 @@ const benefits = [
 
 const FinalCTASection = () => {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-white via-blue-50 to-white">
+    <section className="relative overflow-hidden py-14 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-white via-blue-50 to-white">
 
-      {/* SAME FLOWING BACKGROUND */}
+      {/* ======================================
+          BACKGROUND FLOW
+      ====================================== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
- 
-        <div className="absolute top-0 left-0 w-[420px] h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[ctaMove1_28s_linear_infinite]"></div>
 
-        <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[ctaMove2_34s_linear_infinite]"></div>
+        <div className="absolute top-0 left-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[ctaMove1_28s_linear_infinite]" />
 
-        <div className="absolute top-1/2 left-1/3 w-[320px] h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[ctaMove3_38s_linear_infinite]"></div>
+        <div className="absolute bottom-0 right-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[ctaMove2_34s_linear_infinite]" />
+
+        <div className="absolute top-1/2 left-1/3 w-[220px] sm:w-[280px] md:w-[320px] h-[220px] sm:h-[280px] md:h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[ctaMove3_38s_linear_infinite]" />
 
       </div>
 
       <div className="container-custom relative z-10">
 
-        {/* MAIN CTA CARD */}
-        <div className="relative bg-gradient-to-r from-blue-600 to-blue-700 rounded-[32px] shadow-2xl overflow-hidden">
+        {/* ======================================
+            CTA CARD
+        ====================================== */}
+        <div className="relative bg-gradient-to-r from-blue-600 to-blue-700 rounded-[28px] sm:rounded-[32px] shadow-2xl overflow-hidden">
 
-          {/* INNER GLOW */}
-          <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/10 blur-3xl rounded-full"></div>
-          <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-white/10 blur-3xl rounded-full"></div>
+          {/* Glow */}
+          <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/10 blur-3xl rounded-full" />
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-white/10 blur-3xl rounded-full" />
 
-          <div className="relative z-10 px-6 md:px-10 lg:px-16 py-14 md:py-16">
+          <div className="relative z-10 px-5 sm:px-6 md:px-10 lg:px-16 py-10 sm:py-12 md:py-14 lg:py-16">
 
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
-              {/* LEFT SIDE */}
-              <div>
+              {/* ======================================
+                  LEFT SIDE
+              ====================================== */}
+              <div className="text-center lg:text-left">
 
-                <p className="text-blue-100 font-semibold uppercase tracking-wide text-sm">
+                <p className="text-blue-100 font-semibold uppercase tracking-wide text-xs sm:text-sm">
                   Start Your Growth Journey
                 </p>
 
-                <h2 className="mt-3 text-3xl md:text-5xl font-bold text-white leading-tight">
+                <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                   Ready to Build Your Future With
                   <span className="block text-blue-100">
                     Codebaby Software?
                   </span>
                 </h2>
 
-                <p className="mt-5 text-blue-100 text-base md:text-lg leading-relaxed max-w-xl">
-                  Whether you need career-focused training, placements,
-                  internships, project solutions, or software development —
-                  our team is ready to help you grow.
+                <p className="mt-5 text-blue-100 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+                  Whether you need career-focused training,
+                  placements, internships, project solutions,
+                  or software development — our team is ready
+                  to help you grow.
                 </p>
 
                 {/* BENEFITS */}
-                <div className="mt-8 grid sm:grid-cols-2 gap-4">
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                   {benefits.map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 bg-white/10 rounded-2xl px-4 py-3"
+                      className="flex items-center gap-3 bg-white/10 rounded-2xl px-4 py-3 backdrop-blur-md"
                     >
-                      <FaCheckCircle className="text-white" />
+                      <FaCheckCircle className="text-white shrink-0" />
+
                       <span className="text-white text-sm">
                         {item}
                       </span>
@@ -82,16 +90,18 @@ const FinalCTASection = () => {
 
               </div>
 
-              {/* RIGHT SIDE */}
-              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/10">
+              {/* ======================================
+                  RIGHT SIDE CARD
+              ====================================== */}
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-5 sm:p-6 md:p-8 border border-white/10">
 
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-white text-center lg:text-left">
                   Take The Next Step Today
                 </h3>
 
-                <p className="mt-3 text-blue-100 leading-relaxed">
-                  Connect with our team and choose the right path for your
-                  career or business goals.
+                <p className="mt-3 text-blue-100 leading-relaxed text-sm sm:text-base text-center lg:text-left">
+                  Connect with our team and choose the right
+                  path for your career or business goals.
                 </p>
 
                 {/* BUTTONS */}
@@ -101,12 +111,13 @@ const FinalCTASection = () => {
                     to="/contact"
                     className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-xl font-semibold hover:bg-blue-50 transition"
                   >
-                    Contact Our Team <FaArrowRight />
+                    Contact Our Team
+                    <FaArrowRight />
                   </Link>
 
                   <Link
                     to="/courses"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white text-white rounded-xl font-semibold hover:bg-white/10 transition"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 border border-white text-white rounded-xl font-semibold hover:bg-white/10 transition"
                   >
                     Explore Courses
                   </Link>
@@ -114,14 +125,14 @@ const FinalCTASection = () => {
                 </div>
 
                 {/* QUICK CONTACT */}
-                <div className="mt-8 pt-6 border-t border-white/10 space-y-3">
+                <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
 
-                  <div className="flex items-center gap-3 text-white text-sm">
+                  <div className="flex items-center justify-center lg:justify-start gap-3 text-white text-sm">
                     <FaPhoneAlt />
                     Quick Support Available
                   </div>
 
-                  <div className="flex items-center gap-3 text-white text-sm">
+                  <div className="flex items-center justify-center lg:justify-start gap-3 text-white text-sm">
                     <FaWhatsapp />
                     WhatsApp Assistance Ready
                   </div>
@@ -138,7 +149,9 @@ const FinalCTASection = () => {
 
       </div>
 
-      {/* CSS */}
+      {/* ======================================
+          CSS
+      ====================================== */}
       <style>
         {`
           @keyframes ctaMove1 {

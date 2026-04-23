@@ -25,7 +25,7 @@ const stats = [
     title: "Projects Delivered",
     desc: "Academic, mini, industrial and real implementation solutions.",
   },
-  { 
+  {
     icon: FaBriefcase,
     number: 95,
     suffix: "%",
@@ -51,7 +51,7 @@ const stats = [
     number: 24,
     suffix: "/7",
     title: "Support System",
-    desc: "Continuous guidance for doubts, progress, and career direction.",
+    desc: "Continuous guidance for doubts, progress and career direction.",
   },
 ];
 
@@ -80,21 +80,23 @@ const CounterCard = ({ item, start }) => {
   }, [start, item.number]);
 
   return (
-    <div className="group bg-white/90 backdrop-blur-md border border-blue-100 rounded-3xl p-6 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+    <div className="group bg-white/90 backdrop-blur-md border border-blue-100 rounded-3xl p-5 sm:p-6 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300">
 
       {/* ICON */}
-      <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 text-2xl group-hover:scale-110 group-hover:rotate-6 transition">
+      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 text-xl sm:text-2xl group-hover:scale-110 group-hover:rotate-6 transition">
         <Icon />
       </div>
 
       {/* NUMBER */}
-      <h3 className="mt-5 text-4xl font-bold text-gray-900">
+      <h3 className="mt-5 text-3xl sm:text-4xl font-bold text-gray-900">
         {count}
-        <span className="text-blue-600">{item.suffix}</span>
+        <span className="text-blue-600">
+          {item.suffix}
+        </span>
       </h3>
 
       {/* TITLE */}
-      <p className="mt-2 font-semibold text-gray-900">
+      <p className="mt-2 font-semibold text-gray-900 text-base sm:text-lg">
         {item.title}
       </p>
 
@@ -121,7 +123,9 @@ const StatsCounterSection = () => {
       { threshold: 0.25 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => observer.disconnect();
   }, []);
@@ -129,43 +133,52 @@ const StatsCounterSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-white via-blue-50 to-white"
+      className="relative overflow-hidden py-14 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-white via-blue-50 to-white"
     >
 
-      {/* FLOWING BACKGROUND */}
+      {/* ======================================
+          FLOWING BACKGROUND
+      ====================================== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-        <div className="absolute top-0 left-0 w-[420px] h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[statsMove1_28s_linear_infinite]"></div>
+        <div className="absolute top-0 left-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[statsMove1_28s_linear_infinite]" />
 
-        <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[statsMove2_34s_linear_infinite]"></div>
+        <div className="absolute bottom-0 right-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[statsMove2_34s_linear_infinite]" />
 
-        <div className="absolute top-1/2 left-1/3 w-[320px] h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[statsMove3_38s_linear_infinite]"></div>
+        <div className="absolute top-1/2 left-1/3 w-[220px] sm:w-[280px] md:w-[320px] h-[220px] sm:h-[280px] md:h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[statsMove3_38s_linear_infinite]" />
 
       </div>
 
       <div className="container-custom relative z-10">
 
-        {/* HEADER */}
+        {/* ======================================
+            HEADER
+        ====================================== */}
         <div className="text-center max-w-3xl mx-auto">
 
-          <p className="text-blue-600 font-semibold uppercase tracking-wide text-sm">
+          <p className="text-blue-600 font-semibold uppercase tracking-wide text-xs sm:text-sm">
             Our Growth In Numbers
           </p>
 
-          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             Trusted By Learners,
-            <span className="text-blue-600"> Students & Businesses</span>
+            <span className="text-blue-600">
+              {" "}Students & Businesses
+            </span>
           </h2>
 
-          <p className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed">
-            Real impact created through courses, placements, project execution,
-            mentorship, and continuous support.
+          <p className="mt-5 text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-0">
+            Real impact created through courses,
+            placements, project execution, mentorship
+            and continuous support.
           </p>
 
         </div>
 
-        {/* GRID */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* ======================================
+            GRID
+        ====================================== */}
+        <div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {stats.map((item, index) => (
             <CounterCard
@@ -179,7 +192,9 @@ const StatsCounterSection = () => {
 
       </div>
 
-      {/* CSS */}
+      {/* ======================================
+          CSS
+      ====================================== */}
       <style>
         {`
           @keyframes statsMove1 {

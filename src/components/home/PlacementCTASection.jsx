@@ -6,7 +6,6 @@ import {
   FaUserTie,
   FaCheckCircle,
   FaFileAlt,
-  FaHandshake,
   FaArrowRight,
   FaShieldAlt,
 } from "react-icons/fa";
@@ -19,7 +18,7 @@ const features = [
   "Interview Call Guidance",
   "Confidence Building Sessions",
 ];
- 
+
 const specialBenefits = [
   "No upfront burden for selected programs",
   "Pay after placement options available",
@@ -28,51 +27,60 @@ const specialBenefits = [
 
 const PlacementCTASection = () => {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-white via-blue-50 to-white">
+    <section className="relative overflow-hidden py-14 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-white via-blue-50 to-white">
 
-      {/* MOVING BACKGROUND */}
+      {/* ======================================
+          MOVING BACKGROUND
+      ====================================== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-        <div className="absolute top-0 left-0 w-[420px] h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[placeMove1_28s_linear_infinite]"></div>
+        <div className="absolute top-0 left-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[placeMove1_28s_linear_infinite]" />
 
-        <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[placeMove2_34s_linear_infinite]"></div>
+        <div className="absolute bottom-0 right-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[placeMove2_34s_linear_infinite]" />
 
-        <div className="absolute top-1/2 left-1/3 w-[320px] h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[placeMove3_38s_linear_infinite]"></div>
+        <div className="absolute top-1/2 left-1/3 w-[220px] sm:w-[280px] md:w-[320px] h-[220px] sm:h-[280px] md:h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[placeMove3_38s_linear_infinite]" />
 
       </div>
 
       <div className="container-custom relative z-10">
 
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-          {/* LEFT CONTENT */}
+          {/* ======================================
+              LEFT CONTENT
+          ====================================== */}
           <div>
 
-            <p className="text-blue-600 font-semibold uppercase tracking-wide text-sm">
+            <p className="text-blue-600 font-semibold uppercase tracking-wide text-xs sm:text-sm">
               Placements + Mock Interviews
             </p>
 
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Get Job Ready &
-              <span className="text-blue-600"> Get Hired Faster</span>
+              <span className="text-blue-600">
+                {" "}Get Hired Faster
+              </span>
             </h2>
 
-            <p className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed">
-              We help freshers, students, and career switchers become interview
-              ready with placement support, resume guidance, mock interviews,
-              and practical mentorship.
+            <p className="mt-5 text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
+              We help freshers, students and career switchers
+              become interview ready with placement support,
+              resume guidance, mock interviews and practical mentorship.
             </p>
 
             {/* FEATURES */}
-            <div className="mt-8 grid sm:grid-cols-2 gap-4">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
               {features.map((item, i) => (
                 <div
                   key={i}
                   className="bg-white/90 border border-blue-100 rounded-2xl p-4 shadow-sm flex items-start gap-3"
                 >
-                  <FaCheckCircle className="text-blue-600 mt-1" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <FaCheckCircle className="text-blue-600 mt-0.5 shrink-0" />
+
+                  <span className="text-sm text-gray-700 leading-relaxed">
+                    {item}
+                  </span>
                 </div>
               ))}
 
@@ -83,14 +91,15 @@ const PlacementCTASection = () => {
 
               <Link
                 to="/placements"
-                className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition flex items-center justify-center gap-2"
               >
-                Explore Placements <FaArrowRight />
+                Explore Placements
+                <FaArrowRight />
               </Link>
 
               <Link
                 to="/mock-interviews"
-                className="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition text-center"
+                className="w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition text-center"
               >
                 Book Mock Interview
               </Link>
@@ -99,27 +108,30 @@ const PlacementCTASection = () => {
 
           </div>
 
-          {/* RIGHT SIDE PREMIUM PANEL */}
+          {/* ======================================
+              RIGHT SIDE PANEL
+          ====================================== */}
           <div className="space-y-6">
 
             {/* MAIN CARD */}
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-3xl p-8 shadow-2xl">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
 
               <div className="flex items-center gap-3">
-                <FaShieldAlt className="text-2xl" />
-                <span className="font-semibold">
+                <FaShieldAlt className="text-xl sm:text-2xl" />
+
+                <span className="font-semibold text-sm sm:text-base">
                   Special Feature
                 </span>
               </div>
 
-              <h3 className="mt-5 text-2xl md:text-3xl font-bold leading-tight">
+              <h3 className="mt-5 text-2xl sm:text-3xl font-bold leading-tight">
                 Pay After Placement
               </h3>
 
-              <p className="mt-4 text-blue-100 leading-relaxed">
-                For selected programs, eligible candidates can join with our
-                result-oriented model where payment options are linked with
-                successful placement outcomes.
+              <p className="mt-4 text-blue-100 text-sm sm:text-base leading-relaxed">
+                For selected programs, eligible candidates can
+                join with our result-oriented model where payment
+                options are linked with successful placement outcomes.
               </p>
 
               <div className="mt-6 space-y-3">
@@ -127,10 +139,13 @@ const PlacementCTASection = () => {
                 {specialBenefits.map((item, i) => (
                   <div
                     key={i}
-                    className="bg-white/10 rounded-2xl p-4 flex items-center gap-3"
+                    className="bg-white/10 rounded-2xl p-4 flex items-start gap-3"
                   >
-                    <FaCheckCircle />
-                    <span className="text-sm">{item}</span>
+                    <FaCheckCircle className="mt-0.5 shrink-0" />
+
+                    <span className="text-sm leading-relaxed">
+                      {item}
+                    </span>
                   </div>
                 ))}
 
@@ -139,24 +154,42 @@ const PlacementCTASection = () => {
             </div>
 
             {/* MINI STATS */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
               <div className="bg-white border border-blue-100 rounded-2xl p-5 text-center shadow-sm">
                 <FaBriefcase className="mx-auto text-blue-600 text-xl" />
-                <h4 className="mt-2 font-bold text-blue-600">95%</h4>
-                <p className="text-xs text-gray-500">Interview Ready</p>
+
+                <h4 className="mt-2 font-bold text-blue-600 text-lg">
+                  95%
+                </h4>
+
+                <p className="text-xs text-gray-500">
+                  Interview Ready
+                </p>
               </div>
 
               <div className="bg-white border border-blue-100 rounded-2xl p-5 text-center shadow-sm">
                 <FaUserTie className="mx-auto text-blue-600 text-xl" />
-                <h4 className="mt-2 font-bold text-blue-600">1:1</h4>
-                <p className="text-xs text-gray-500">Mock Sessions</p>
+
+                <h4 className="mt-2 font-bold text-blue-600 text-lg">
+                  1:1
+                </h4>
+
+                <p className="text-xs text-gray-500">
+                  Mock Sessions
+                </p>
               </div>
 
               <div className="bg-white border border-blue-100 rounded-2xl p-5 text-center shadow-sm">
                 <FaFileAlt className="mx-auto text-blue-600 text-xl" />
-                <h4 className="mt-2 font-bold text-blue-600">ATS</h4>
-                <p className="text-xs text-gray-500">Resume Boost</p>
+
+                <h4 className="mt-2 font-bold text-blue-600 text-lg">
+                  ATS
+                </h4>
+
+                <p className="text-xs text-gray-500">
+                  Resume Boost
+                </p>
               </div>
 
             </div>
@@ -167,7 +200,9 @@ const PlacementCTASection = () => {
 
       </div>
 
-      {/* CSS */}
+      {/* ======================================
+          CSS
+      ====================================== */}
       <style>
         {`
           @keyframes placeMove1 {

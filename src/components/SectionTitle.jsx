@@ -14,17 +14,22 @@ const SectionTitle = ({
   return (
     <div
       className={`
-        relative z-10
+        relative z-10 w-full
         ${maxWidth}
         ${isCenter ? "mx-auto text-center" : ""}
         ${isLeft ? "text-left" : ""}
       `}
     >
-      {/* BADGE */}
+
+      {/* ======================================
+          BADGE
+      ====================================== */}
       {badge && (
         <div
           className={`
-            inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase
+            inline-flex items-center gap-2 px-4 py-2 rounded-full
+            text-[11px] sm:text-xs md:text-sm font-semibold
+            tracking-wide uppercase
             ${
               light
                 ? "bg-white/10 border border-white/20 text-blue-100"
@@ -34,44 +39,68 @@ const SectionTitle = ({
         >
           <span
             className={`
-              w-2 h-2 rounded-full
+              w-2 h-2 rounded-full shrink-0
               ${light ? "bg-blue-300" : "bg-blue-600"}
             `}
           />
-          {badge}
+
+          <span className="leading-none">
+            {badge}
+          </span>
+
         </div>
       )}
 
-      {/* TITLE */}
+      {/* ======================================
+          TITLE
+      ====================================== */}
       {title && (
         <h2
           className={`
             mt-4 font-bold leading-tight tracking-tight
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-            ${light ? "text-white" : "text-gray-900"}
+            ${
+              light
+                ? "text-white"
+                : "text-gray-900"
+            }
           `}
         >
           {title}
         </h2>
       )}
 
-      {/* SUBTITLE */}
+      {/* ======================================
+          SUBTITLE
+      ====================================== */}
       {subtitle && (
         <p
           className={`
-            mt-5 text-base md:text-lg leading-relaxed
-            ${light ? "text-blue-100" : "text-gray-600"}
-            ${isCenter ? "mx-auto max-w-2xl" : "max-w-2xl"}
+            mt-4 sm:mt-5 leading-relaxed
+            text-sm sm:text-base md:text-lg
+            ${
+              light
+                ? "text-blue-100"
+                : "text-gray-600"
+            }
+            ${
+              isCenter
+                ? "mx-auto max-w-2xl"
+                : "max-w-2xl"
+            }
           `}
         >
           {subtitle}
         </p>
       )}
 
-      {/* DECORATIVE LINE */}
+      {/* ======================================
+          DECORATIVE LINE
+      ====================================== */}
       <div
         className={`
-          mt-6 h-1 rounded-full w-24
+          mt-5 sm:mt-6 h-1 rounded-full
+          w-20 sm:w-24 md:w-28
           ${
             light
               ? "bg-gradient-to-r from-blue-300 to-white/80"
@@ -80,6 +109,7 @@ const SectionTitle = ({
           ${isCenter ? "mx-auto" : ""}
         `}
       />
+
     </div>
   );
 };

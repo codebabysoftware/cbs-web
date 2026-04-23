@@ -26,7 +26,7 @@ const reasons = [
     title: "Placement Focused Roadmap",
     desc: "Resume building, mock interviews, aptitude direction, hiring support, and job readiness.",
   },
-  { 
+  {
     icon: FaProjectDiagram,
     title: "Real Projects Exposure",
     desc: "Academic, industrial, startup, and portfolio-grade projects to build confidence and experience.",
@@ -34,7 +34,7 @@ const reasons = [
   {
     icon: FaCertificate,
     title: "Internship & Certification",
-    desc: "Structured internships with guided tasks, completion certificates, and real workflow exposure.",
+    desc: "Structured internships with guided tasks, completion certificates, and workflow exposure.",
   },
   {
     icon: FaHeadset,
@@ -43,44 +43,56 @@ const reasons = [
   },
 ];
 
+const bottomPoints = [
+  "Courses + Mock Interviews",
+  "Projects + Internship Experience",
+  "Placement Guidance + Hiring Readiness",
+];
+
 const WhyChooseUsSection = () => {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-white via-blue-50 to-white">
+    <section className="relative overflow-hidden py-14 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-white via-blue-50 to-white">
 
-      {/* SAME FLOWING BACKGROUND AS HERO */}
+      {/* ======================================
+          MOVING BACKGROUND
+      ====================================== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-        <div className="absolute top-10 left-0 w-[420px] h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[whyMove1_28s_linear_infinite]"></div>
+        <div className="absolute top-10 left-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[whyMove1_28s_linear_infinite]" />
 
-        <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[whyMove2_34s_linear_infinite]"></div>
+        <div className="absolute bottom-0 right-0 w-[260px] sm:w-[340px] md:w-[420px] h-[260px] sm:h-[340px] md:h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[whyMove2_34s_linear_infinite]" />
 
-        <div className="absolute top-1/2 left-1/3 w-[320px] h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[whyMove3_38s_linear_infinite]"></div>
+        <div className="absolute top-1/2 left-1/3 w-[220px] sm:w-[280px] md:w-[320px] h-[220px] sm:h-[280px] md:h-[320px] bg-cyan-200/15 blur-3xl rounded-full animate-[whyMove3_38s_linear_infinite]" />
 
       </div>
 
       <div className="container-custom relative z-10">
 
-        {/* HEADER */}
+        {/* ======================================
+            HEADER
+        ====================================== */}
         <div className="text-center max-w-3xl mx-auto">
 
-          <p className="text-blue-600 font-semibold uppercase tracking-wide text-sm">
+          <p className="text-blue-600 font-semibold uppercase tracking-wide text-xs sm:text-sm">
             Why Choose Codebaby
           </p>
 
-          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             More Than Training.
-            <span className="text-blue-600"> We Build Careers.</span>
+            <span className="text-blue-600">
+              {" "}We Build Careers.
+            </span>
           </h2>
 
-          <p className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed">
-            We combine training, placements, internships, projects, and software
-            solutions into one practical ecosystem that helps students and
-            businesses grow faster.
+          <p className="mt-5 text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-0">
+            We combine training, placements, internships,
+            projects and software solutions into one
+            practical ecosystem for faster growth.
           </p>
 
         </div>
 
-        {/* TRUST STRIP */}
+        {/* TRUST PILLS */}
         <div className="mt-8 flex flex-wrap justify-center gap-3">
 
           {[
@@ -91,7 +103,7 @@ const WhyChooseUsSection = () => {
           ].map((item, i) => (
             <span
               key={i}
-              className="px-4 py-2 bg-white border border-blue-100 rounded-full text-sm text-gray-700 shadow-sm"
+              className="px-4 py-2 bg-white border border-blue-100 rounded-full text-xs sm:text-sm text-gray-700 shadow-sm"
             >
               {item}
             </span>
@@ -99,8 +111,10 @@ const WhyChooseUsSection = () => {
 
         </div>
 
-        {/* MAIN GRID */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* ======================================
+            GRID
+        ====================================== */}
+        <div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {reasons.map((item, index) => {
             const Icon = item.icon;
@@ -108,15 +122,16 @@ const WhyChooseUsSection = () => {
             return (
               <div
                 key={index}
-                className="group bg-white/90 backdrop-blur-md border border-blue-100 rounded-3xl p-6 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+                className="group bg-white/90 backdrop-blur-md border border-blue-100 rounded-3xl p-5 sm:p-6 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300"
               >
+
                 {/* ICON */}
-                <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 text-2xl group-hover:scale-110 group-hover:rotate-6 transition">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 text-xl sm:text-2xl group-hover:scale-110 group-hover:rotate-6 transition">
                   <Icon />
                 </div>
 
                 {/* TITLE */}
-                <h3 className="mt-5 text-xl font-bold text-gray-900">
+                <h3 className="mt-5 text-lg sm:text-xl font-bold text-gray-900 leading-snug">
                   {item.title}
                 </h3>
 
@@ -131,38 +146,41 @@ const WhyChooseUsSection = () => {
 
         </div>
 
-        {/* BOTTOM FEATURE PANEL */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-8 md:p-10 text-white shadow-2xl">
+        {/* ======================================
+            BOTTOM FEATURE PANEL
+        ====================================== */}
+        <div className="mt-14 sm:mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-5 sm:p-7 md:p-10 text-white shadow-2xl">
 
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
             {/* LEFT */}
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold leading-tight">
+            <div className="text-center lg:text-left">
+
+              <h3 className="text-2xl sm:text-3xl font-bold leading-tight">
                 One Platform for Skills, Jobs & Growth
               </h3>
 
-              <p className="mt-4 text-blue-100 leading-relaxed">
-                Instead of searching different places for courses, placements,
-                internships, mock interviews, and project support — get
-                everything in one ecosystem.
+              <p className="mt-4 text-blue-100 text-sm sm:text-base leading-relaxed">
+                Instead of searching different places for
+                courses, placements, internships, mock interviews
+                and project support — get everything in one ecosystem.
               </p>
+
             </div>
 
             {/* RIGHT */}
             <div className="grid gap-4">
 
-              {[
-                "Courses + Mock Interviews",
-                "Projects + Internship Experience",
-                "Placement Guidance + Hiring Readiness",
-              ].map((point, i) => (
+              {bottomPoints.map((point, i) => (
                 <div
                   key={i}
-                  className="bg-white/10 rounded-2xl p-4 flex items-center gap-3"
+                  className="bg-white/10 rounded-2xl p-4 flex items-start gap-3 backdrop-blur-md"
                 >
-                  <FaCheckCircle />
-                  <span>{point}</span>
+                  <FaCheckCircle className="mt-0.5 shrink-0" />
+
+                  <span className="text-sm sm:text-base leading-relaxed">
+                    {point}
+                  </span>
                 </div>
               ))}
 
@@ -174,7 +192,9 @@ const WhyChooseUsSection = () => {
 
       </div>
 
-      {/* ANIMATION CSS */}
+      {/* ======================================
+          CSS
+      ====================================== */}
       <style>
         {`
           @keyframes whyMove1 {
