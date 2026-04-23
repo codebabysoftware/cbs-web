@@ -27,7 +27,7 @@ const InternshipCard = ({ internship }) => {
     thumbnail,
     shortDescription,
   } = internship;
-
+ 
   const url = `/internships/${slug || id}`;
 
   return (

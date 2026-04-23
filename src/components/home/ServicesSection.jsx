@@ -21,7 +21,7 @@ const featuredService = {
   tag: "Most Demanded",
   stats: ["95% Success Focus", "HR + Tech Rounds", "Career Guidance"],
 };
-
+ 
 const services = [
   {
     title: "Job Ready Courses",

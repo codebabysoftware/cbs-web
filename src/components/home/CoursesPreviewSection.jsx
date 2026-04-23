@@ -13,7 +13,7 @@ import coursesData from "../../data/courses";
 
 const fallbackImage =
   "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80";
-
+ 
 const CoursesPreviewSection = () => {
   // SHOW FIRST 6 COURSES FROM YOUR REAL DATA
   const previewCourses = coursesData.slice(0, 6);

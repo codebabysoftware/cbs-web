@@ -22,4 +22,4 @@ const TrustSection = () => {
   );
 };
 
-export default TrustSection;
+export default TrustSection; 

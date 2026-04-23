@@ -21,7 +21,7 @@ const InternshipsPreview = () => {
           <Link to="/internships" className="btn btn-outline">
             View All Internships
           </Link>
-
+ 
         </div>
 
         {/* GRID */}

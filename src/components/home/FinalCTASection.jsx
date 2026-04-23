@@ -21,7 +21,7 @@ const FinalCTASection = () => {
 
       {/* SAME FLOWING BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-
+ 
         <div className="absolute top-0 left-0 w-[420px] h-[420px] bg-blue-200/20 blur-3xl rounded-full animate-[ctaMove1_28s_linear_infinite]"></div>
 
         <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-sky-200/20 blur-3xl rounded-full animate-[ctaMove2_34s_linear_infinite]"></div>

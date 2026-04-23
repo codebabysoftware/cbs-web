@@ -19,7 +19,7 @@ const features = [
   "Interview Call Guidance",
   "Confidence Building Sessions",
 ];
-
+ 
 const specialBenefits = [
   "No upfront burden for selected programs",
   "Pay after placement options available",

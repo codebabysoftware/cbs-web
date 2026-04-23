@@ -26,7 +26,7 @@ const CourseCard = ({ course }) => {
     thumbnail,
     shortDescription,
   } = course;
-
+ 
   const url = `/courses/${slug || id}`;
 
   return (

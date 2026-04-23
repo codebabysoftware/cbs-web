@@ -18,7 +18,7 @@ const tabs = [
   { key: "mini", label: "Mini Projects" },
   { key: "industrial", label: "Industrial" },
 ];
-
+ 
 const fallbackImage =
   "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80";
 

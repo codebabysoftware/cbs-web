@@ -27,7 +27,7 @@ const ProjectCard = ({ project }) => {
     thumbnail,
     shortDescription,
   } = project;
-
+ 
   const url = `/projects/${slug || id}`;
 
   return (

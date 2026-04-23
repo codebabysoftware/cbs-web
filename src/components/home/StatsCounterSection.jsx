@@ -25,7 +25,7 @@ const stats = [
     title: "Projects Delivered",
     desc: "Academic, mini, industrial and real implementation solutions.",
   },
-  {
+  { 
     icon: FaBriefcase,
     number: 95,
     suffix: "%",

@@ -26,7 +26,7 @@ const reasons = [
     title: "Placement Focused Roadmap",
     desc: "Resume building, mock interviews, aptitude direction, hiring support, and job readiness.",
   },
-  {
+  { 
     icon: FaProjectDiagram,
     title: "Real Projects Exposure",
     desc: "Academic, industrial, startup, and portfolio-grade projects to build confidence and experience.",

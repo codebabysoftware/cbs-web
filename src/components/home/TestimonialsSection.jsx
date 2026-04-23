@@ -22,7 +22,7 @@ const testimonials = [
     review:
       "Best place to learn with hands-on experience. The internship tasks felt like real company work and boosted my skills.",
   },
-  {
+  { 
     name: "Pooja Desai",
     role: "Frontend Developer Learner",
     review:
