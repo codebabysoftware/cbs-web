@@ -90,10 +90,6 @@ const Navbar = () => {
               <h2 className="text-sm sm:text-base md:text-lg font-bold text-blue-600 truncate">
                 Codebaby Software
               </h2>
-
-              <p className="text-[10px] sm:text-xs text-slate-500 truncate">
-                Build Skills • Get Placed
-              </p>
             </div>
           </Link>
 
