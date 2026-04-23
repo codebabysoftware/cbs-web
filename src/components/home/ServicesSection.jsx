@@ -18,7 +18,7 @@ const featuredService = {
   desc:
     "Get interview calls, resume guidance, mock interviews, recruiter preparation, and complete career support to land your dream IT job.",
   path: "/placements",
-  tag: "🔥 Most Demanded",
+  tag: "Most Demanded",
   stats: ["95% Success Focus", "HR + Tech Rounds", "Career Guidance"],
 };
 
@@ -29,7 +29,7 @@ const services = [
     desc:
       "Learn industry-ready skills with practical roadmap training from beginner to advanced level.",
     path: "/courses",
-    tag: "⭐ Popular",
+    tag: "Popular",
   },
   {
     title: "Academic Projects",
@@ -37,7 +37,7 @@ const services = [
     desc:
       "Mini, major, final-year and real implementation projects with complete guidance.",
     path: "/projects?type=academic",
-    tag: "🎓 Students",
+    tag: "Students",
   },
   {
     title: "Mock Interviews",
@@ -45,7 +45,7 @@ const services = [
     desc:
       "Practice technical + HR interviews with professionals and get feedback instantly.",
     path: "/mock-interviews",
-    tag: "🚀 Career Boost",
+    tag: "Career Boost",
   },
   {
     title: "Internships",
@@ -53,7 +53,7 @@ const services = [
     desc:
       "Gain real-world exposure, guided projects, certification and work experience.",
     path: "/internships",
-    tag: "💼 Experience",
+    tag: "Experience",
   },
   {
     title: "Software Solutions",
@@ -61,7 +61,7 @@ const services = [
     desc:
       "Custom websites, web apps, business software and scalable solutions for companies.",
     path: "/contact",
-    tag: "🏢 Business",
+    tag: "Business",
     wide: true,
   },
 ];

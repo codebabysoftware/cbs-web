@@ -1,213 +1,180 @@
-// src/components/home/HeroSection.jsx
+// src/components/HeroSection.jsx
 
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaJava,
-  FaAws,
-  FaArrowRight,
-} from "react-icons/fa";
-import {
-  SiJavascript,
-  SiTypescript,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiDocker,
-  SiKubernetes,
-  SiOpenai,
-  SiMongodb,
-  SiPostgresql,
-  SiFirebase,
-} from "react-icons/si";
-
-const techIcons = [
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaJava,
-  FaAws,
-  SiJavascript,
-  SiTypescript,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiDocker,
-  SiKubernetes,
-  SiOpenai,
-  SiMongodb,
-  SiPostgresql,
-  SiFirebase,
-];
+import { useEffect, useState } from "react";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-  "https://images.unsplash.com/photo-1552664730-d307ca884978",
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
 ];
 
 const HeroSection = () => {
-  const [activeImage, setActiveImage] = useState(0);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveImage((prev) => (prev + 1) % heroImages.length);
-    }, 2000);
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % heroImages.length);
+    }, 3200);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-white pt-8 md:pt-16 pb-16 md:pb-24">
+    <section className="relative overflow-hidden pt-28 md:pt-36 pb-20 bg-white">
 
-      {/* WHOLE SCREEN MOVING LIGHT BLUE BACKGROUND */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* ======================================
+          BLUE MOVING GRADIENT BACKGROUND
+      ====================================== */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-200/30 blur-3xl rounded-full animate-[bgmove1_26s_linear_infinite]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white" />
 
-        <div className="absolute top-1/3 right-0 w-[450px] h-[450px] bg-sky-200/25 blur-3xl rounded-full animate-[bgmove2_32s_linear_infinite]"></div>
+        <div className="absolute -top-20 -left-20 w-[460px] h-[460px] bg-blue-400/20 blur-[110px] rounded-full animate-[blueMove1_22s_linear_infinite]" />
 
-        <div className="absolute bottom-0 left-1/4 w-[420px] h-[420px] bg-cyan-200/20 blur-3xl rounded-full animate-[bgmove3_38s_linear_infinite]"></div>
+        <div className="absolute top-1/4 right-0 w-[420px] h-[420px] bg-sky-300/20 blur-[110px] rounded-full animate-[blueMove2_28s_linear_infinite]" />
+
+        <div className="absolute bottom-0 left-1/3 w-[360px] h-[360px] bg-indigo-300/15 blur-[110px] rounded-full animate-[blueMove3_26s_linear_infinite]" />
 
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-14 items-center">
 
-        {/* MAIN GRID */}
-        <div className="grid lg:grid-cols-2 gap-10 items-center min-h-[80vh]">
+        {/* ======================================
+            LEFT SIDE
+        ====================================== */}
+        <div>
 
-          {/* LEFT SECTION */}
-          <div>
+          
+          <h1 className="mt-6 text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
+            Build Industry-Ready <br />
+            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
+              Tech Skills
+            </span>
+          </h1>
 
-            {/* BIGGER COMPANY NAME */}
-            <h2 className="text-blue-600 font-bold text-2xl md:text-4xl tracking-tight mb-3">
-              CODEBABY SOFTWARE
-            </h2>
+          <p className="mt-6 text-slate-600 text-lg leading-relaxed max-w-xl">
+            Learn through structured courses, placements,
+            mock interviews, hands-on training, real-world
+            projects and internships designed to prepare you
+            for modern tech careers.
+          </p>
 
-            {/* LITTLE SMALLER HEADLINE */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold leading-tight text-gray-900">
-              Build <span className="text-blue-600">Software.</span>
-              <br />
-              Build <span className="text-blue-600">Skills.</span>
-              <br />
-              Build <span className="text-blue-600">Careers.</span>
-            </h1>
+          {/* Features */}
+          <div className="mt-8 flex flex-wrap gap-4 text-sm">
 
-            {/* TEXT */}
-            <p className="mt-6 text-gray-600 text-base md:text-lg leading-relaxed max-w-xl">
-              We provide software solutions for businesses and help IT aspirants
-              become industry-ready through courses, placements, mock
-              interviews, internships, and live project exposure.
-            </p>
+            <span className="px-4 py-2 bg-white border border-blue-100 rounded-full shadow-sm text-slate-700">
+              ✔ Hands-on Projects
+            </span>
 
-            {/* SERVICES PRIORITY ORDER */}
-            <div className="mt-6 flex flex-wrap gap-3">
+            <span className="px-4 py-2 bg-white border border-blue-100 rounded-full shadow-sm text-slate-700">
+              ✔ Industry Mentors
+            </span>
 
-              {[
-                "Job Ready Courses",
-                "Placement Support",
-                "Academic Projects",
-                "Industrial Projects",
-                "Mock Interviews",
-                "Internships",
-              ].map((item, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 bg-white border border-blue-100 rounded-full text-sm text-gray-700 shadow-sm hover:shadow-md transition"
-                >
-                  {item}
-                </span>
-              ))}
+            <span className="px-4 py-2 bg-white border border-blue-100 rounded-full shadow-sm text-slate-700">
+              ✔ Placement Support
+            </span>
 
+          </div>
+
+          {/* CTA */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+
+            <Link
+              to="/courses"
+              className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg text-center"
+            >
+              Explore Courses
+            </Link>
+
+            <Link
+              to="/placements"
+              className="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition text-center"
+            >
+              Placements
+            </Link>
+
+          </div>
+
+          {/* Stats */}
+          <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl">
+
+            <div>
+              <p className="text-2xl md:text-3xl font-bold text-slate-900">
+                1000+
+              </p>
+              <p className="text-sm text-slate-500 mt-1">
+                IT Aspirants Trained
+              </p>
             </div>
 
-            {/* CTA */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div>
+              <p className="text-2xl md:text-3xl font-bold text-slate-900">
+                50+
+              </p>
+              <p className="text-sm text-slate-500 mt-1">
+                Projects Delivered
+              </p>
+            </div>
 
-              <Link
-                to="/courses"
-                className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition flex items-center justify-center gap-2"
-              >
-                Explore Courses <FaArrowRight />
-              </Link>
-
-              <Link
-                to="/contact"
-                className="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition text-center"
-              >
-                Contact Us
-              </Link>
-
+            <div>
+              <p className="text-2xl md:text-3xl font-bold text-slate-900">
+                95%
+              </p>
+              <p className="text-sm text-slate-500 mt-1">
+                Success Rate
+              </p>
             </div>
 
           </div>
 
-          {/* RIGHT SECTION */}
-          <div className="relative">
+        </div>
 
-            {/* IMAGE CARD */}
-            <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl border border-blue-100">
+        {/* ======================================
+            RIGHT SIDE SINGLE FRAME SLIDER
+        ====================================== */}
+        <div className="relative hidden lg:block">
+
+          <div className="relative w-full h-[560px]">
+
+            {/* Main Frame */}
+            <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-white shadow-2xl bg-white">
 
               {heroImages.map((img, index) => (
                 <img
                   key={index}
                   src={img}
-                  alt="workspace"
+                  alt="Codebaby Training"
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
-                    activeImage === index
+                    active === index
                       ? "opacity-100 scale-100"
                       : "opacity-0 scale-110"
                   }`}
                 />
               ))}
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent" />
+
 
             </div>
 
-            {/* FLOATING STATS CARD */}
-            <div className="absolute -bottom-6 left-6 bg-white rounded-2xl shadow-2xl px-5 py-4 border border-blue-100 hidden md:block min-w-[240px]">
+           
 
-              <div className="grid grid-cols-3 gap-4 text-center">
-
-                <div>
-                  <h4 className="font-bold text-blue-600 text-lg">50+</h4>
-                  <p className="text-xs text-gray-500">Projects</p>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-blue-600 text-lg">95%</h4>
-                  <p className="text-xs text-gray-500">Placement</p>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-blue-600 text-lg">1000+</h4>
-                  <p className="text-xs text-gray-500">Students</p>
-                </div>
-
-              </div>
-
+            {/* Dots */}
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
+              {heroImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`h-2.5 rounded-full transition-all ${
+                    active === i
+                      ? "w-8 bg-blue-600"
+                      : "w-2.5 bg-blue-200"
+                  }`}
+                />
+              ))}
             </div>
-
-          </div>
-
-        </div>
-
-        {/* TECH STACK */}
-        <div className="mt-16 overflow-hidden border-y border-blue-100 py-5">
-
-          <div className="flex w-max animate-[marquee_22s_linear_infinite] gap-14">
-
-            {[...techIcons, ...techIcons, ...techIcons].map((Icon, index) => (
-              <div
-                key={index}
-                className="text-3xl md:text-4xl text-blue-500 opacity-80 hover:scale-125 transition"
-              >
-                <Icon />
-              </div>
-            ))}
 
           </div>
 
@@ -215,27 +182,24 @@ const HeroSection = () => {
 
       </div>
 
-      {/* ANIMATIONS */}
+      {/* ======================================
+          CSS
+      ====================================== */}
       <style>
         {`
-          @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-33.33%); }
-          }
-
-          @keyframes bgmove1 {
+          @keyframes blueMove1 {
             0%,100% { transform: translate(0,0); }
-            50% { transform: translate(180px,80px); }
+            50% { transform: translate(180px,90px); }
           }
 
-          @keyframes bgmove2 {
+          @keyframes blueMove2 {
             0%,100% { transform: translate(0,0); }
             50% { transform: translate(-160px,100px); }
           }
 
-          @keyframes bgmove3 {
+          @keyframes blueMove3 {
             0%,100% { transform: translate(0,0); }
-            50% { transform: translate(120px,-90px); }
+            50% { transform: translate(100px,-70px); }
           }
         `}
       </style>
