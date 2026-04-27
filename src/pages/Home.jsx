@@ -69,11 +69,11 @@ const Home = () => {
         {/* SERVICES */}
         <section className="relative">
           <ServicesSection />
-        </section>
-
-        {/* WHY CHOOSE US */}
+        </section> 
+        
+        {/* PLACEMENTS CTA */}
         <section className="relative">
-          <WhyChooseUsSection />
+          <PlacementCTASection />
         </section>
 
         {/* COURSES */}
@@ -81,10 +81,7 @@ const Home = () => {
           <CoursesPreviewSection />
         </section>
 
-        {/* PLACEMENTS CTA */}
-        <section className="relative">
-          <PlacementCTASection />
-        </section>
+        
 
         {/* PROJECTS */}
         <section className="relative">
@@ -94,6 +91,10 @@ const Home = () => {
         {/* STATS */}
         <section className="relative">
           <StatsCounterSection />
+        </section>
+        {/* WHY CHOOSE US */}
+        <section className="relative">
+          <WhyChooseUsSection />
         </section>
 
         {/* TESTIMONIALS */}

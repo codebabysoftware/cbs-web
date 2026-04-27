@@ -10,6 +10,8 @@ import FloatingButtons from "./components/common/FloatingContactButtons";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Placements from "./pages/Placements";
+import MockInterviews from "./pages/MockInterviews";
 
 import Courses from "./pages/Courses";
 import CourseDetails from "./pages/CourseDetails";
@@ -17,8 +19,7 @@ import CourseDetails from "./pages/CourseDetails";
 import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
 
-import Placements from "./pages/Placements";
-import MockInterviews from "./pages/MockInterviews";
+
 
 import Internships from "./pages/Internships";
 import InternshipDetails from "./pages/InternshipDetails";
@@ -38,6 +39,8 @@ function App() {
 
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/placements" element={<Placements />} />
+            <Route path="/mock-interviews" element={<MockInterviews />} />
 
             <Route path="/courses" element={<Courses />} />
             <Route path="/courses/:slug" element={<CourseDetails />} />
@@ -45,8 +48,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetails />} />
 
-            <Route path="/placements" element={<Placements />} />
-            <Route path="/mock-interviews" element={<MockInterviews />} />
+            
 
             <Route path="/internships" element={<Internships />} />
             <Route
